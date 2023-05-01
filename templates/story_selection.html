@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Select a story:</h1>
+    <form action="/form" method="get">
+        <label for="story_id">Choose a story:</label>
+        <select name="story_id" id="story_id">
+            {% for id, story in stories.items() %}
+                <option value="{{ id }}">Story {{ loop.index }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Select Story">
+    </form>
+{% endblock %}
